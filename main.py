@@ -7,25 +7,24 @@ from kivy.lang import Builder
 
 KV = """
 Screen:
-    GridLayout:
-        rows: 2
-        
-        AnchorLayout:
-            anchor_x: 'left'
-            anchor_y: 'top'
+    BoxLayout:
+        orientation: 'vertical'
                              
-            Image:
-                source: 'data/images/360x270.png'
-                adaptive_width: True
-        
-        AnchorLayout:
-            anchor_x: 'center'
-            anchor_y: 'center'
-        
-            MDRaisedButton:
-                id: license_agreement_button
-                text: 'Принимаю'
-                pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+        Button:
+            text: 'Картинка'
+   
+
+        Label:
+            text: 'Для использования приоржения вы\\nдолжны принять пользовательское\\nсоглашение'
+         
+
+        Button:
+            id: license_agreement_button
+            text: 'Принимаю'
+            
+        Button:
+            id: license_agreement_button
+            text: 'Не принимаю'
 """
 
 class MindTrackerApp(MDApp):
