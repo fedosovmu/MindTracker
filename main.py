@@ -12,6 +12,9 @@ Screen:
                              
         Button:
             text: 'Картинка'
+            #width: 300
+            height: 500
+            size_hint: (1, None)
    
 
         Label:
@@ -21,10 +24,14 @@ Screen:
         Button:
             id: license_agreement_button
             text: 'Принимаю'
+            height: 150
+            size_hint: (1, None)
             
         Button:
             id: license_agreement_button
             text: 'Не принимаю'
+            height: 150
+            size_hint: (1, None)
 """
 
 class MindTrackerApp(MDApp):
