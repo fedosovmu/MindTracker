@@ -12,8 +12,7 @@ Screen:
                              
         Button:
             text: 'Картинка'
-            #width: 300
-            height: 500
+            height: dp(270)
             size_hint: (1, None)
    
 
@@ -24,13 +23,13 @@ Screen:
         Button:
             id: license_agreement_button
             text: 'Принимаю'
-            height: 150
+            height: dp(70)
             size_hint: (1, None)
             
         Button:
             id: license_agreement_button
             text: 'Не принимаю'
-            height: 150
+            height: dp(70)
             size_hint: (1, None)
 """
 
