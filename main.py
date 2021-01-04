@@ -9,17 +9,19 @@ KV = """
 Screen:
     BoxLayout:
         orientation: 'vertical'
-                             
-        Button:
-            text: 'Картинка'
+                                        
+        Image:
+            source: 'data/images/360x270.png'
+            allow_stretch: True
+            keep_ratio: False
             height: dp(270)
             size_hint: (1, None)
    
-
         Label:
-            text: 'Для использования приоржения вы\\nдолжны принять пользовательское\\nсоглашение'
+            text: 'Для использования приложения вы\\nдолжны принять пользовательское\\nсоглашение'
+            multiline: True
+            width: dp(300)
          
-
         Button:
             id: license_agreement_button
             text: 'Принимаю'
