@@ -10,11 +10,13 @@
             size: self.size
             pos: self.pos
 
+
 <ImagePlaceholder@Label+BackgroundColor>
     background_color: AppColors.ImageBackground
     text: 'Картинка'
     color: AppColors.ImageLable
     font_size: dp(18)
+
 
 <MainButton@Button>
     background_color: 0, 0, 0, 0
@@ -29,7 +31,21 @@
             size: self.size
             radius: [dp(16),]
 
+
 <TextButton@Button>
     background_color: 0, 0, 0, 0
     color: AppColors.MainColor if self.state=='normal' else AppColors.PressedButton
     font_size: dp(18)
+
+
+<MainText@Label>:
+    color: AppColors.SilverWhite
+    multiline: True
+    font_size: dp(18)
+    line_height: 1.15
+    text_size: self.size
+    valign: 'top'
+    halign: 'left'
+
+<MiniText@MainText>:
+    font_size: dp(14)
