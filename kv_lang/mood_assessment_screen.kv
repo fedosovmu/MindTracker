@@ -19,15 +19,8 @@
             height: dp(56)
             size_hint: (1, None)
 
-        Label:
+        MiniText:
             text: 'Мы используем шестибальную систему оценки настроения.'
-            color: AppColors.SilverWhite
-            multiline: True
-            text_size: self.size
-            font_size: dp(14)
-            line_height: dp(.6)
-            valign: 'top'
-            halign: 'left'
             padding: dp(16), dp(16)
             height: dp(84)
             size_hint: (1, None)
@@ -37,15 +30,9 @@
             height: dp(80)
             size_hint: (1, None)
 
-        Label:
+        MiniText:
             text: '1 - Очень плохое\n2 - Плохое\n3 - Ниже среднего\n4 - Выше среднего\n5 - Хорошее\n6 - Очень хорошее'
-            color: AppColors.SilverWhite
-            multiline: True
-            text_size: self.size
-            font_size: dp(14)
             line_height: 1.5
-            valign: 'top'
-            halign: 'left'
             padding: dp(16), dp(36)
 
         AnchorLayout:
@@ -54,12 +41,8 @@
             anchor_x: 'center'
             anchor_y: 'top'
 
-            Button:
+            TextButton:
                 id: skip_button
                 text: 'Пропустить'
-                color: AppColors.MainColor
-                font_size: dp(18)
-                background_color: 0, 0, 0, 0
-                size_hint: (None, None)
                 size: dp(160), dp(50)
                 on_press: print("Skip")

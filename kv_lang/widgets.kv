@@ -34,8 +34,9 @@
 
 <TextButton@Button>
     background_color: 0, 0, 0, 0
-    color: AppColors.MainColor if self.state=='normal' else AppColors.PressedButton
     font_size: dp(18)
+    color: AppColors.MainColor if self.state=='normal' else AppColors.PressedButton
+    size_hint: (None, None)
 
 
 <MainText@Label>:
