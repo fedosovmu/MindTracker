@@ -4,9 +4,10 @@
 
 
 <LicenseAgreementScreen@Screen+BackgroundColor>:
+    background_color: AppColors.Dark
+
     BoxLayout:
         orientation: 'vertical'
-        background_color: AppColors.Dark
 
         BackgroundLabel:
             text: 'Картинка'
@@ -31,8 +32,7 @@
         AnchorLayout:
             height: dp(70)
             size_hint: (1, None)
-            padding: dp(16), dp(0)
-            anchor_y: 'center'
+            padding: dp(16), dp(5)
 
             RoundedButton:
                 id: license_agreement_agree_button
@@ -40,12 +40,18 @@
                 font_size: dp(18)
                 on_press: print("Agree")
 
-
-        Button:
-            id: license_agreement_disagree_button
-            text: 'Не принимаю'
-            font_size: dp(18)
+        AnchorLayout:
             height: dp(70)
             size_hint: (1, None)
-            on_press: print("DisAgree")
+            anchor_x: 'center'
+            anchor_y: 'center'
+
+            Button:
+                id: license_agreement_disagree_button
+                text: 'Не принимаю'
+                font_size: dp(18)
+                background_color: 0, 0, 0, 0
+                size_hint: (None, None)
+                size: dp(160), dp(50)
+                on_press: print("DisAgree")
 
