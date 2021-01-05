@@ -7,17 +7,59 @@
     BoxLayout:
         orientation: 'vertical'
 
-        Button:
-            text: 'toolbar'
+        Label:
+            text: 'X Как ваше настроение?'
+            color: AppColors.SilverWhite
+            text_size: self.size
+            font_size: dp(20)
+            bold: True
+            valign: 'center'
+            halign: 'left'
+            padding: dp(23), dp(16)
+            height: dp(56)
+            size_hint: (1, None)
+
+        Label:
+            text: 'Мы используем шестибальную систему оценки настроения.'
+            color: AppColors.SilverWhite
+            multiline: True
+            text_size: self.size
+            font_size: dp(14)
+            line_height: dp(.6)
+            valign: 'top'
+            halign: 'left'
+            padding: dp(16), dp(16)
+            height: dp(84)
+            size_hint: (1, None)
 
         Button:
-            text: 'text'
+            text: 'Mood Assessment'
+            height: dp(80)
+            size_hint: (1, None)
 
-        Button:
-            text: 'Assessment'
+        Label:
+            text: '1 - Очень плохое\n2 - Плохое\n3 - Ниже среднего\n4 - Выше среднего\n5 - Хорошее\n6 - Очень хорошее'
+            color: AppColors.SilverWhite
+            multiline: True
+            text_size: self.size
+            font_size: dp(14)
+            line_height: 1.5
+            valign: 'top'
+            halign: 'left'
+            padding: dp(16), dp(36)
 
-        Button:
-            text: 'Assesment text'
+        AnchorLayout:
+            height: dp(63)
+            size_hint: (1, None)
+            anchor_x: 'center'
+            anchor_y: 'top'
 
-        Button:
-            text: 'Пропустить'
+            Button:
+                id: skip_button
+                text: 'Пропустить'
+                color: AppColors.MainColor
+                font_size: dp(18)
+                background_color: 0, 0, 0, 0
+                size_hint: (None, None)
+                size: dp(160), dp(50)
+                on_press: print("Skip")
