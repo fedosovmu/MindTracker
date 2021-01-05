@@ -7,11 +7,20 @@
     BoxLayout:
         orientation: 'vertical'
 
-        HeaderText:
-            text: 'X Как ваше настроение?'
-            padding: dp(23), dp(16)
+        BoxLayout:
+            orientation: 'horizontal'
             height: dp(56)
             size_hint: (1, None)
+
+            Button:
+                text: 'X'
+                size_hint: (None, None)
+                size: dp(56), dp(56)
+
+            HeaderText:
+                text: 'X Как ваше настроение?'
+                padding: dp(23), dp(16)
+
 
         MiniText:
             text: 'Мы используем шестибальную систему оценки настроения.'
