@@ -1,13 +1,22 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+
 <LicenseAgreementScreen@Screen>:
     BoxLayout:
         orientation: 'vertical'
 
-        Image:
-            source: 'data/images/360x270.png'
-            allow_stretch: True
-            keep_ratio: False
+        Label:
+            text: 'Картинка'
+            color: get_color_from_hex('#A3A3A3')
+            font_size: dp(18)
             height: dp(270)
             size_hint: (1, None)
+            canvas.before:
+                Color:
+                    rgb: get_color_from_hex('#2C2C2C')
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
 
         Label:
             text: 'Для использования приложения вы должны принять пользовательское соглашение'
@@ -20,14 +29,17 @@
             padding: dp(24), dp(24)
 
 
+
         Button:
-            id: license_agreement_button
+            id: license_agreement_agree_button
             text: 'Принимаю'
+            font_size: dp(18)
             height: dp(70)
             size_hint: (1, None)
 
         Button:
-            id: license_agreement_button
+            id: license_agreement_disagree_button
             text: 'Не принимаю'
+            font_size: dp(18)
             height: dp(70)
             size_hint: (1, None)
