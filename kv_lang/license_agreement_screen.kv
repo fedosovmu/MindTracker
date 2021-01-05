@@ -10,9 +10,15 @@
             size_hint: (1, None)
 
         Label:
-            text: 'Для использования приложения вы\nдолжны принять пользовательское\nсоглашение'
+            text: 'Для использования приложения вы должны принять пользовательское соглашение'
             multiline: True
-            width: dp(300)
+            font_size: dp(18)
+            line_height: dp(.6)
+            text_size: self.size
+            valign: 'top'
+            halign: 'left'
+            padding: dp(24), dp(24)
+
 
         Button:
             id: license_agreement_button

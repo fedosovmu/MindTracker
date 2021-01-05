@@ -1,15 +1,13 @@
 import config
 config.set_config()
-from kivymd.app import MDApp
-from kivymd.uix.button import MDFlatButton
-from kivymd.uix.label import MDLabel
+from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen, ScreenManager
 
 
-class MindTrackerApp(MDApp):
+class MindTrackerApp(App):
     def build(self):
-        self.theme_cls.theme_style = "Dark"
+        #self.theme_cls.theme_style = "Dark"
         return Builder.load_file('kv_lang/mind_tracker.kv')
 
 
