@@ -34,10 +34,9 @@
             size_hint: (1, None)
             padding: dp(16), dp(5)
 
-            RoundedButton:
+            MainButton:
                 id: license_agreement_agree_button
                 text: 'Принимаю'
-                font_size: dp(18)
                 on_press: print("Agree")
 
         AnchorLayout:
@@ -46,12 +45,9 @@
             anchor_x: 'center'
             anchor_y: 'top'
 
-            Button:
+            TextButton:
                 id: license_agreement_disagree_button
                 text: 'Не принимаю'
-                color: AppColors.MainColor
-                font_size: dp(18)
-                background_color: 0, 0, 0, 0
                 size_hint: (None, None)
                 size: dp(160), dp(50)
                 on_press: print("DisAgree")
