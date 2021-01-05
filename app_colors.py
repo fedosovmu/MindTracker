@@ -10,5 +10,4 @@ class AppColors:
 
     ImageLable = hex('#A3A3A3')
     ImageBackground = hex('#2C2C2C')
-
-    PressedButton = hex('#afd3ed')
+    PressedButton = hex('#AFD3ED')

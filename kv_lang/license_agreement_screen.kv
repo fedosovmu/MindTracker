@@ -1,25 +1,24 @@
 #:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import AppColors app_colors.AppColors
+#:include kv_lang/widgets.kv
 
 
-<LicenseAgreementScreen@Screen>:
+<LicenseAgreementScreen@Screen+BackgroundColor>:
     BoxLayout:
         orientation: 'vertical'
+        background_color: AppColors.Dark
 
-        Label:
+        BackgroundLabel:
             text: 'Картинка'
-            color: get_color_from_hex('#A3A3A3')
+            color: AppColors.ImageLable
             font_size: dp(18)
             height: dp(270)
             size_hint: (1, None)
-            canvas.before:
-                Color:
-                    rgb: get_color_from_hex('#2C2C2C')
-                Rectangle:
-                    size: self.size
-                    pos: self.pos
+            background_color: AppColors.ImageBackground
 
         Label:
             text: 'Для использования приложения вы должны принять пользовательское соглашение'
+            color: AppColors.SilverWhite
             multiline: True
             font_size: dp(18)
             line_height: dp(.6)
@@ -29,13 +28,18 @@
             padding: dp(24), dp(24)
 
 
-
-        Button:
-            id: license_agreement_agree_button
-            text: 'Принимаю'
-            font_size: dp(18)
+        AnchorLayout:
             height: dp(70)
             size_hint: (1, None)
+            padding: dp(16), dp(0)
+            anchor_y: 'center'
+
+            RoundedButton:
+                id: license_agreement_agree_button
+                text: 'Принимаю'
+                font_size: dp(18)
+                on_press: print("Agree")
+
 
         Button:
             id: license_agreement_disagree_button
@@ -43,3 +47,5 @@
             font_size: dp(18)
             height: dp(70)
             size_hint: (1, None)
+            on_press: print("DisAgree")
+

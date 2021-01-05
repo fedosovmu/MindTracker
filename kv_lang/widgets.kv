@@ -1,0 +1,25 @@
+#:import AppColors app_colors.AppColors
+
+
+<BackgroundColor@Widget>
+    background_color: 0, 0, 0, 0
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+<BackgroundLabel@Label+BackgroundColor>
+    background_color: 0, 0, 0, 0
+
+<RoundedButton@Button>
+    background_color: 0, 0, 0, 0
+
+    canvas.before:
+        Color:
+            rgba: AppColors.MainColor if self.state=='normal' else AppColors.PressedButton
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [dp(16),]
