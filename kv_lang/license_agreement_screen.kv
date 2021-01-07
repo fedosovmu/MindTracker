@@ -26,7 +26,8 @@
             MainButton:
                 id: license_agreement_agree_button
                 text: 'Принимаю'
-                on_press: print("Agree")
+                #on_press: print("Agree")
+                on_press: app.switch_screen('mood_assessment')
 
         AnchorLayout:
             height: dp(63)

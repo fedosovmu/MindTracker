@@ -20,7 +20,8 @@
                 size: dp(56), dp(56)
 
                 TextButton:
-                    on_press: print("Close")
+                    #on_press: print("Close")
+                    on_press: app.switch_screen('license_agreement', 'right')
 
                 Image:
                     #source: 'data/icons/rectangle.png'
