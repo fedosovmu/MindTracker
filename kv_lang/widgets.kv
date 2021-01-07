@@ -22,10 +22,11 @@
     background_color: 0, 0, 0, 0
     color: AppColors.White
     font_size: dp(18)
+    font_name: 'Roboto'
 
     canvas.before:
         Color:
-            rgba: AppColors.MainColor if self.state=='normal' else AppColors.PressedButton
+            rgba: AppColors.MainColor if self.state=='normal' else AppColors.MainButtonPressed
         RoundedRectangle:
             pos: self.pos
             size: self.size
@@ -35,7 +36,8 @@
 <TextButton@Button>
     background_color: 0, 0, 0, 0
     font_size: dp(18)
-    color: AppColors.MainColor if self.state=='normal' else AppColors.PressedButton
+    font_name: 'Roboto'
+    color: AppColors.MainColor if self.state=='normal' else AppColors.MainButtonPressed
     size_hint: (None, None)
 
 
@@ -44,6 +46,7 @@
     multiline: True
     font_size: dp(18)
     line_height: 1.15
+    font_name: 'Roboto'
     text_size: self.size
     valign: 'top'
     halign: 'left'
@@ -54,3 +57,32 @@
 <HeaderText@MainText>:
     font_size: dp(20)
     bold: True
+
+
+<MoodButton@AnchorLayout>
+    text: ''
+    color: 0, 0, 0, 0
+
+    MainButton:
+        font_size: dp(28)
+        text: root.text
+        on_press: print(f'Mood {self.text}')
+
+        canvas.before:
+            Color:
+                rgba: AppColors.MiniDark if self.state=='normal' else AppColors.MoodButtonPressed
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [dp(16),]
+
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'bottom'
+        padding: dp(0), dp(6)
+
+        ImagePlaceholder:
+            text: ''
+            size: dp(19), dp(6)
+            size_hint: (None, None)
+            background_color: root.color

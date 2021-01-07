@@ -1,4 +1,5 @@
 #:import AppColors app_colors.AppColors
+#:include kv_lang/widgets.kv
 
 
 <MoodAssessmentScreen@Screen+BackgroundColor>:
@@ -12,14 +13,23 @@
             height: dp(56)
             size_hint: (1, None)
 
-            Button:
-                text: 'X'
+            AnchorLayout:
+                anchor_x: 'left'
+                anchor_y: 'center'
                 size_hint: (None, None)
                 size: dp(56), dp(56)
 
+                TextButton:
+                    on_press: print("Close")
+
+                Image:
+                    #source: 'data/icons/rectangle.png'
+                    source: 'data/icons/cross.png'
+                    size: dp(32), dp(32)
+
             HeaderText:
-                text: 'X Как ваше настроение?'
-                padding: dp(23), dp(16)
+                text: 'Как ваше настроение?'
+                padding: dp(0), dp(16)
 
 
         MiniText:
@@ -28,10 +38,36 @@
             height: dp(84)
             size_hint: (1, None)
 
-        Button:
-            text: 'Mood Assessment'
+        BoxLayout:
+            orientation: 'horizontal'
             height: dp(80)
             size_hint: (1, None)
+            padding: dp(16), dp(0)
+            spacing: dp(6)
+
+            MoodButton:
+                text: '1'
+                color: AppColors.Mood['1']
+
+            MoodButton:
+                text: '2'
+                color: AppColors.Mood['2']
+
+            MoodButton:
+                text: '3'
+                color: AppColors.Mood['3']
+
+            MoodButton:
+                text: '4'
+                color: AppColors.Mood['4']
+
+            MoodButton:
+                text: '5'
+                color: AppColors.Mood['5']
+
+            MoodButton:
+                text: '6'
+                color: AppColors.Mood['6']
 
         MiniText:
             text: '1 - Очень плохое\n2 - Плохое\n3 - Ниже среднего\n4 - Выше среднего\n5 - Хорошее\n6 - Очень хорошее'
