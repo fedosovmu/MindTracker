@@ -3,10 +3,14 @@ config.set_config()
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen, ScreenManager
+from kivy.core.window import Window
+from app_colors import AppColors
+
 
 
 class MindTrackerApp(App):
     def build(self):
+        Window.clearcolor = AppColors.Dark
         self.screen_manager = Builder.load_file('kv_lang/app.kv')
         return self.screen_manager
 
