@@ -1,9 +1,7 @@
-#:include kv_lang/widgets.kv
+#:include kv_lang/widgets/main_widgets.kv
 
 
 <LicenseAgreementScreen@Screen>:
-    background_color: app.colors.Dark
-
     BoxLayout:
         orientation: 'vertical'
 
@@ -24,8 +22,8 @@
             MainButton:
                 id: license_agreement_agree_button
                 text: 'Принимаю'
-                #on_press: print("Agree")
-                on_press: app.switch_screen('mood_assessment')
+                on_press: print("Agree")
+                #on_press: app.switch_screen('mood_assessment')
 
         AnchorLayout:
             height: dp(63)

@@ -1,0 +1,58 @@
+
+<BackgroundColor@Widget>
+    background_color: 0, 0, 0, 0
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+
+<ImagePlaceholder@Label+BackgroundColor>
+    background_color: app.colors.image_placeholder_background_color
+    text: 'Картинка'
+    color: app.colors.image_placeholder_text_color
+    font_size: dp(18)
+
+
+<MainButton@Button>
+    background_color: 0, 0, 0, 0
+    color: app.colors.main_button_text_color
+    font_size: dp(18)
+    font_name: 'Roboto'
+
+    canvas.before:
+        Color:
+            rgba: app.colors.main_button_normal_state_background_color if self.state=='normal' else app.colors.main_button_pressed_state_background_color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [dp(16),]
+
+
+<TextButton@Button>
+    background_color: 0, 0, 0, 0
+    font_size: dp(18)
+    font_name: 'Roboto'
+    color: app.colors.text_button_normal_state_text_color if self.state=='normal' else app.colors.text_button_pressed_state_text_color
+    size_hint: (None, None)
+
+
+<MainText@Label>:
+    color: app.colors.main_text_color
+    multiline: True
+    font_size: dp(18)
+    line_height: 1.15
+    font_name: 'Roboto'
+    text_size: self.size
+    valign: 'top'
+    halign: 'left'
+
+<MiniText@MainText>:
+    font_size: dp(14)
+
+<HeaderText@MainText>:
+    font_size: dp(20)
+    bold: True
+

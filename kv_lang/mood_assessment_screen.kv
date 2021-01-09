@@ -1,87 +1,10 @@
-#:include kv_lang/widgets.kv
+#:include kv_lang/widgets/main_widgets.kv
 
 
 <MoodAssessmentScreen@Screen>:
-    background_color: app.colors.Dark
-
     BoxLayout:
         orientation: 'vertical'
 
-        BoxLayout:
-            orientation: 'horizontal'
-            height: dp(56)
-            size_hint: (1, None)
+        Button:
+            text: 'Mood assesment'
 
-            AnchorLayout:
-                anchor_x: 'left'
-                anchor_y: 'center'
-                size_hint: (None, None)
-                size: dp(56), dp(56)
-
-                TextButton:
-                    #on_press: print("Close")
-                    on_press: app.switch_screen('license_agreement', 'right')
-
-                Image:
-                    #source: 'data/icons/rectangle.png'
-                    source: 'data/icons/cross.png'
-                    size: dp(32), dp(32)
-
-            HeaderText:
-                text: 'Как ваше настроение?'
-                padding: dp(0), dp(16)
-
-
-        MiniText:
-            text: 'Мы используем шестибальную систему оценки настроения.'
-            padding: dp(16), dp(16)
-            height: dp(84)
-            size_hint: (1, None)
-
-        BoxLayout:
-            orientation: 'horizontal'
-            height: dp(80)
-            size_hint: (1, None)
-            padding: dp(16), dp(0)
-            spacing: dp(6)
-
-            MoodButton:
-                text: '1'
-                color: app.colors.Mood['1']
-
-            MoodButton:
-                text: '2'
-                color: app.colors.Mood['2']
-
-            MoodButton:
-                text: '3'
-                color: app.colors.Mood['3']
-
-            MoodButton:
-                text: '4'
-                color: app.colors.Mood['4']
-
-            MoodButton:
-                text: '5'
-                color: app.colors.Mood['5']
-
-            MoodButton:
-                text: '6'
-                color: app.colors.Mood['6']
-
-        MiniText:
-            text: '1 - Очень плохое\n2 - Плохое\n3 - Ниже среднего\n4 - Выше среднего\n5 - Хорошее\n6 - Очень хорошее'
-            line_height: 1.5
-            padding: dp(16), dp(36)
-
-        AnchorLayout:
-            height: dp(63)
-            size_hint: (1, None)
-            anchor_x: 'center'
-            anchor_y: 'top'
-
-            TextButton:
-                id: skip_button
-                text: 'Пропустить'
-                size: dp(160), dp(50)
-                on_press: print("Skip")
