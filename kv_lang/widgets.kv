@@ -1,5 +1,3 @@
-#:import AppColors app_colors.AppColors
-
 
 <BackgroundColor@Widget>
     background_color: 0, 0, 0, 0
@@ -12,21 +10,21 @@
 
 
 <ImagePlaceholder@Label+BackgroundColor>
-    background_color: AppColors.ImageBackground
+    background_color: app.colors.ImageBackground
     text: 'Картинка'
-    color: AppColors.ImageLable
+    color: app.colors.ImageLable
     font_size: dp(18)
 
 
 <MainButton@Button>
     background_color: 0, 0, 0, 0
-    color: AppColors.White
+    color: app.colors.White
     font_size: dp(18)
     font_name: 'Roboto'
 
     canvas.before:
         Color:
-            rgba: AppColors.MainColor if self.state=='normal' else AppColors.MainButtonPressed
+            rgba: app.colors.MainColor if self.state=='normal' else app.colors.MainButtonPressed
         RoundedRectangle:
             pos: self.pos
             size: self.size
@@ -37,12 +35,12 @@
     background_color: 0, 0, 0, 0
     font_size: dp(18)
     font_name: 'Roboto'
-    color: AppColors.MainColor if self.state=='normal' else AppColors.MainButtonPressed
+    color: app.colors.MainColor if self.state=='normal' else app.colors.MainButtonPressed
     size_hint: (None, None)
 
 
 <MainText@Label>:
-    color: AppColors.SilverWhite
+    color: app.colors.SilverWhite
     multiline: True
     font_size: dp(18)
     line_height: 1.15
@@ -70,7 +68,7 @@
 
         canvas.before:
             Color:
-                rgba: AppColors.MiniDark if self.state=='normal' else AppColors.MoodButtonPressed
+                rgba: app.colors.MiniDark if self.state=='normal' else app.colors.MoodButtonPressed
             RoundedRectangle:
                 pos: self.pos
                 size: self.size

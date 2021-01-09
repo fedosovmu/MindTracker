@@ -10,6 +10,7 @@ from app_colors import AppColors
 
 class MindTrackerApp(App):
     def build(self):
+        self.colors = AppColors
         Window.clearcolor = AppColors.Dark
         self.screen_manager = Builder.load_file('kv_lang/app.kv')
         return self.screen_manager

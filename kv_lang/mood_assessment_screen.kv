@@ -1,9 +1,8 @@
-#:import AppColors app_colors.AppColors
 #:include kv_lang/widgets.kv
 
 
 <MoodAssessmentScreen@Screen>:
-    background_color: AppColors.Dark
+    background_color: app.colors.Dark
 
     BoxLayout:
         orientation: 'vertical'
@@ -48,27 +47,27 @@
 
             MoodButton:
                 text: '1'
-                color: AppColors.Mood['1']
+                color: app.colors.Mood['1']
 
             MoodButton:
                 text: '2'
-                color: AppColors.Mood['2']
+                color: app.colors.Mood['2']
 
             MoodButton:
                 text: '3'
-                color: AppColors.Mood['3']
+                color: app.colors.Mood['3']
 
             MoodButton:
                 text: '4'
-                color: AppColors.Mood['4']
+                color: app.colors.Mood['4']
 
             MoodButton:
                 text: '5'
-                color: AppColors.Mood['5']
+                color: app.colors.Mood['5']
 
             MoodButton:
                 text: '6'
-                color: AppColors.Mood['6']
+                color: app.colors.Mood['6']
 
         MiniText:
             text: '1 - Очень плохое\n2 - Плохое\n3 - Ниже среднего\n4 - Выше среднего\n5 - Хорошее\n6 - Очень хорошее'
