@@ -3,7 +3,7 @@
 # (str) Title of your application
 title = Настроениеметр
 
-icon.filename = notebook_icon.png
+icon.filename = data/icons/app_icon.png
 presplash.filename = data/icons/app_icon.png
 
 # (str) Package name
@@ -31,7 +31,7 @@ source.include_exts = py,png,jpg,kv,atlas
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 0.1
+version = 0.2
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
