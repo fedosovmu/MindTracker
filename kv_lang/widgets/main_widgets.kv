@@ -1,19 +1,15 @@
 
-<BackgroundColor@Widget>
-    background_color: 0, 0, 0, 0
-    canvas.before:
-        Color:
-            rgba: root.background_color
-        Rectangle:
-            size: self.size
-            pos: self.pos
-
-
-<ImagePlaceholder@Label+BackgroundColor>
-    background_color: app.colors.image_placeholder_background_color
+<ImagePlaceholder@Label>
     text: 'Картинка'
     color: app.colors.image_placeholder_text_color
-    font_size: dp(18)
+    font_size: dp(16)
+    canvas.before:
+        Color:
+            rgba: app.colors.image_placeholder_background_color
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [dp(8),]
 
 
 <MainButton@Button>
@@ -28,7 +24,7 @@
         RoundedRectangle:
             pos: self.pos
             size: self.size
-            radius: [dp(16),]
+            radius: [dp(12),]
 
 
 <TextButton@Button>
@@ -42,7 +38,7 @@
 <MainText@Label>:
     color: app.colors.main_text_color
     multiline: True
-    font_size: dp(18)
+    font_size: dp(16)
     line_height: 1.15
     font_name: 'Roboto'
     text_size: self.size

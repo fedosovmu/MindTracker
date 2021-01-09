@@ -5,25 +5,33 @@
     BoxLayout:
         orientation: 'vertical'
 
-        ImagePlaceholder:
-            height: dp(270)
+        AnchorLayout:
+            height: dp(280+27*2)
             size_hint: (1, None)
+            padding: dp(16), dp(27)
+
+            ImagePlaceholder:
+
 
         MainText:
             text: 'Для использования приложения вы должны принять пользовательское соглашение'
-            padding: dp(24), dp(24)
+            padding: dp(24), dp(0)
 
 
         AnchorLayout:
-            height: dp(70)
+            height: dp(60)
             size_hint: (1, None)
-            padding: dp(16), dp(5)
+            padding: dp(16), dp(0)
 
             MainButton:
                 id: license_agreement_agree_button
                 text: 'Принимаю'
                 on_press: print("Agree")
                 #on_press: app.switch_screen('mood_assessment')
+
+        AnchorLayout:
+            height: dp(8)
+            size_hint: (1, None)
 
         AnchorLayout:
             height: dp(63)
