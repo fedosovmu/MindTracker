@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = Настроениеметр
+title = Биполярочка
 
 icon.filename = data/icons/app_icon.png
 presplash.filename = data/icons/app_icon.png
@@ -82,7 +82,7 @@ fullscreen = 0
 # red, blue, green, black, white, gray, cyan, magenta, yellow, lightgray,
 # darkgray, grey, lightgrey, darkgrey, aqua, fuchsia, lime, maroon, navy,
 # olive, purple, silver, teal.
-android.presplash_color = #161617
+android.presplash_color = #322A42
 
 # (string) Presplash animation using Lottie format.
 # see https://lottiefiles.com/ for examples and https://airbnb.design/lottie/
