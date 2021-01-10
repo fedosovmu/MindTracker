@@ -21,12 +21,14 @@
             padding: dp(16), dp(0)
 
             MainButton:
+                id: mood_agree_button
                 text: 'Принимаю'
                 on_press: print("Assess")
+                current_mood: 4
 
                 canvas.before:
                     Color:
-                        rgba: app.colors.mood_colors['4'] if self.state=='normal' else app.colors.main_button_pressed_state_background_color
+                        rgba: app.colors.mood_colors[str(self.current_mood)] if self.state=='normal' else app.colors.main_button_pressed_state_background_color
                     RoundedRectangle:
                         pos: self.pos
                         size: self.size
