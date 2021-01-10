@@ -7,7 +7,7 @@ class AppColors:
         'Dark': hex('#1A1C20'),
         'MiniDark': hex('#2C2C31'),
         'MainColors/Basic': hex('#FFFFFF'),
-        'SilverWhite': hex('#E3E7EA'),
+        'SilverWhite': hex('#F9EFF6'),
         'White': hex('#FFFFFF'),
         'MoodColors/1': hex('#674A7A'),
         'MoodColors/2': hex('#A43485'),
@@ -49,3 +49,4 @@ class AppColors:
     }
 
     mood_assesstor_background_color = design_colors['Purple/SuperDark']
+    mood_assessor_secondary_text_color = design_colors['Purple/TextSecondary']

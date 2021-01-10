@@ -1,9 +1,13 @@
+#:include kv_lang/widgets/main_widgets.kv
+
+
 <MoodAssessor@AnchorLayout>
     AnchorLayout:
         padding: dp(16), dp(60)
         anchor_y: 'bottom'
 
-        Label:
+        BoxLayout:
+            orientation: 'vertical'
             height: dp(209)
             size_hint: (1, None)
 
@@ -14,6 +18,37 @@
                     size: self.size
                     pos: self.pos
                     radius: [dp(24),]
+
+            HeaderText:
+                text: 'Нормальное'
+                valign: 'bottom'
+                halign: 'center'
+
+            BoxLayout:
+                orientation: 'horizontal'
+                padding: dp(30), dp(0)
+                height: dp(40)
+                size_hint: (1, None)
+
+                MainText:
+                    text: 'Настроение'
+                    valign: 'bottom'
+                    font_size: dp(14)
+                    color: app.colors.mood_assessor_secondary_text_color
+
+                MainText:
+                    text: 'Потяни'
+                    valign: 'bottom'
+                    halign: 'right'
+                    font_size: dp(14)
+                    color: app.colors.mood_assessor_secondary_text_color
+
+            Slider:
+                min: 1
+                max: 7
+                value: 4
+                height: dp(80)
+                size_hint: (1, None)
 
     AnchorLayout:
         anchor_x: 'center'
