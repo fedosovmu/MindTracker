@@ -24,7 +24,7 @@ class AppColors:
         'MainColors/CTA': hex('#674A7A'),
     }
 
-    app_background = design_colors['Purple/Dark']
+    app_background_color = design_colors['Purple/Dark']
 
     image_placeholder_text_color = design_colors['SilverWhite']
     image_placeholder_background_color = design_colors['Purple/SuperDark']
@@ -47,3 +47,5 @@ class AppColors:
         '6': design_colors['MoodColors/6'],
         '7': design_colors['MoodColors/7']
     }
+
+    mood_assesstor_background_color = design_colors['Purple/SuperDark']

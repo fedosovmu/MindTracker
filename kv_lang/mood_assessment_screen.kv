@@ -1,4 +1,5 @@
 #:include kv_lang/widgets/main_widgets.kv
+#:include kv_lang/widgets/mood_assessor.kv
 
 
 <MoodAssessmentScreen@Screen>:
@@ -9,10 +10,14 @@
             text: 'Как ваше настроение?'
             height: dp(56)
             size_hint: (1, None)
-            padding: dp(24), dp(0)
+            padding: dp(16), dp(0)
 
-        Button:
-            text: 'Mood assesment'
+        AnchorLayout:
+            #size_hint: (1, None)
+            padding: dp(16), dp(60)
+
+            MoodAssessor:
+
 
         AnchorLayout:
             height: dp(60)
