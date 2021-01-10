@@ -1,3 +1,5 @@
+import os
+os.environ['KIVY_IMAGE'] = 'sdl2'
 import config
 config.set_config()
 from kivy.app import App
