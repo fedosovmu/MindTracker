@@ -37,3 +37,13 @@ class AppColors:
     text_button_pressed_state_text_color = design_colors['SilverWhite']
 
     main_text_color = design_colors['SilverWhite']
+
+    mood_colors = {
+        '1': design_colors['MoodColors/1'],
+        '2': design_colors['MoodColors/2'],
+        '3': design_colors['MoodColors/3'],
+        '4': design_colors['MoodColors/4'],
+        '5': design_colors['MoodColors/5'],
+        '6': design_colors['MoodColors/6'],
+        '7': design_colors['MoodColors/7']
+    }

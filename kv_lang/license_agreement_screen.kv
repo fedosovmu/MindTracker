@@ -24,10 +24,8 @@
             padding: dp(16), dp(0)
 
             MainButton:
-                id: license_agreement_agree_button
                 text: 'Принимаю'
-                on_press: print("Agree")
-                #on_press: app.switch_screen('mood_assessment')
+                on_press: print("Agree"); app.switch_screen('mood_assessment')
 
         AnchorLayout:
             height: dp(8)
@@ -40,7 +38,6 @@
             anchor_y: 'top'
 
             TextButton:
-                id: license_agreement_disagree_button
                 text: 'Не принимаю'
                 size: dp(160), dp(50)
                 on_press: print("DisAgree")
