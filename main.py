@@ -7,7 +7,6 @@ from kivy.core.window import Window
 from app_colors import AppColors
 
 
-
 class MindTrackerApp(App):
     def build(self):
         self.colors = AppColors
