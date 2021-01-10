@@ -12,12 +12,7 @@
             size_hint: (1, None)
             padding: dp(16), dp(0)
 
-        AnchorLayout:
-            #size_hint: (1, None)
-            padding: dp(16), dp(60)
-
-            MoodAssessor:
-
+        MoodAssessor
 
         AnchorLayout:
             height: dp(60)
@@ -28,6 +23,19 @@
                 text: 'Принимаю'
                 on_press: print("Assess")
 
+                canvas.before:
+                    Color:
+                        rgba: app.colors.mood_colors['4'] if self.state=='normal' else app.colors.main_button_pressed_state_background_color
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [dp(12),]
+
+
+        AnchorLayout:
+            height: dp(8)
+            size_hint: (1, None)
+
         AnchorLayout:
             height: dp(63)
             size_hint: (1, None)
@@ -36,6 +44,6 @@
 
             TextButton:
                 text: 'Пропустить'
-                size: dp(160), dp(50)
+                size: dp(160), dp(60)
                 on_press: print('Skip')
 

@@ -32,7 +32,6 @@
     font_size: dp(18)
     font_name: 'Roboto'
     color: app.colors.text_button_normal_state_text_color if self.state=='normal' else app.colors.text_button_pressed_state_text_color
-    size_hint: (None, None)
 
 
 <MainText@Label>:
@@ -45,11 +44,10 @@
     valign: 'top'
     halign: 'left'
 
-<MiniText@MainText>:
-    font_size: dp(14)
-
 <HeaderText@MainText>:
     font_size: dp(20)
     valign: 'center'
     bold: True
 
+<SvgImage>:
+    do_rotation: False
