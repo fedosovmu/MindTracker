@@ -2,6 +2,11 @@
 
 
 <MoodAssessor@AnchorLayout>
+    content: app.content.mood_assessment_screen['mood_assessor']
+    default_mood: 4
+    _mood_value: self.ids.mood_assessor_slider.value
+    mood: self.default_mood if self._mood_value == 0 else self._mood_value
+
     AnchorLayout:
         padding: dp(16), dp(60)
         anchor_y: 'bottom'
@@ -13,14 +18,14 @@
 
             canvas.before:
                 Color:
-                    rgba: app.colors.mood_assesstor_background_color
+                    rgba: app.colors.mood_assessor_background_color
                 RoundedRectangle:
                     size: self.size
                     pos: self.pos
                     radius: [dp(24),]
 
             HeaderText:
-                text: 'Нормальное'
+                text: root.content['mood_names'][str(root.mood)]
                 valign: 'bottom'
                 halign: 'center'
 
@@ -31,13 +36,13 @@
                 size_hint: (1, None)
 
                 MainText:
-                    text: 'Настроение'
+                    text: root.content['secondary_label_mood_text']
                     valign: 'bottom'
                     font_size: dp(14)
                     color: app.colors.mood_assessor_secondary_text_color
 
                 MainText:
-                    text: 'Потяни'
+                    text: root.content['secondary_label_pull_text']
                     valign: 'bottom'
                     halign: 'right'
                     font_size: dp(14)
@@ -52,7 +57,7 @@
                     id: mood_assessor_slider
                     min: 1
                     max: 7
-                    value: 4
+                    value: root.default_mood
                     step: 1
 
 
@@ -64,7 +69,7 @@
 
         Image:
             id: mood_sphere_image
-            source: f'data/images/mood_spheres/4.png'
+            source: root.content['paths_to_mood_spheres'][(root.mood)]
             size: dp(self.texture.width), dp(self.texture.height)
             size_hint: (None, None)
             allow_stretch: True

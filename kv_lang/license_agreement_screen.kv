@@ -2,6 +2,8 @@
 
 
 <LicenseAgreementScreen@Screen>:
+    content: app.content.license_agreement_screen
+
     BoxLayout:
         orientation: 'vertical'
 
@@ -14,7 +16,7 @@
 
 
         MainText:
-            text: 'Для использования приложения вы должны принять пользовательское соглашение'
+            text: root.content['text']
             padding: dp(24), dp(0)
 
 
@@ -24,7 +26,7 @@
             padding: dp(16), dp(0)
 
             MainButton:
-                text: 'Принимаю'
+                text: root.content['agree_button_text']
                 on_press: print("Agree"); app.switch_screen('mood_assessment')
 
         AnchorLayout:
@@ -38,7 +40,7 @@
             anchor_y: 'top'
 
             TextButton:
-                text: 'Не принимаю'
+                text: root.content['disagree_button_text']
                 size: dp(160), dp(60)
                 on_press: print("DisAgree")
 

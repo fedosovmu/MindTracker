@@ -3,11 +3,13 @@
 
 
 <MoodAssessmentScreen@Screen>:
+    content: app.content.mood_assessment_screen
+
     BoxLayout:
         orientation: 'vertical'
 
         HeaderText:
-            text: 'Как ваше настроение?'
+            text: root.content['header_text']
             height: dp(56)
             size_hint: (1, None)
             padding: dp(16), dp(0)
@@ -22,9 +24,10 @@
 
             MainButton:
                 id: mood_agree_button
-                text: 'Принимаю'
+                text: root.content['mood_agree_button_text']
                 on_press: print("Assess")
                 current_mood: 4
+                #normal_state_color = app.colors.mood_colors[str(self.current_mood)]
 
                 canvas.before:
                     Color:
@@ -46,7 +49,7 @@
             anchor_y: 'top'
 
             TextButton:
-                text: 'Пропустить'
+                text: root.content['skip_button_text']
                 size: dp(160), dp(60)
                 on_press: print('Skip')
 
