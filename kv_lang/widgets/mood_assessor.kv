@@ -3,9 +3,8 @@
 
 <MoodAssessor@AnchorLayout>
     content: app.content.mood_assessment_screen['mood_assessor']
-    default_mood: 4
     _mood_value: self.ids.mood_assessor_slider.value
-    mood: self.default_mood if self._mood_value == 0 else self._mood_value
+    mood: root.content['default_mood'] if self._mood_value == 0 else self._mood_value
 
     AnchorLayout:
         padding: dp(16), dp(60)
@@ -57,7 +56,7 @@
                     id: mood_assessor_slider
                     min: 1
                     max: 7
-                    value: root.default_mood
+                    value: root.content['default_mood']
                     step: 1
 
 

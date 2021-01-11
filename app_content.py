@@ -1,6 +1,6 @@
 
 
-class Content:
+class AppContent:
     image_placeholder_text = 'Картинка'
 
     license_agreement_screen = {
@@ -27,6 +27,7 @@ class Content:
             },
             'paths_to_mood_spheres': {
                 i: f'data/images/mood_spheres/{i}.png' for i in range(1, 8)
-            }
+            },
+            'default_mood': 4
         }
     }
