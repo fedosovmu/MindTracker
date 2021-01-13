@@ -50,7 +50,38 @@
             AnchorLayout:
                 height: dp(80)
                 size_hint: (1, None)
-                padding: dp(30), dp(0)
+                padding: dp(18), dp(0)
+                anchor_y: 'top'
+
+
+                AnchorLayout:
+                    height: dp(40)
+                    padding: dp(14), dp(0)
+                    size_hint: (1, None)
+                    anchor_y: 'bottom'
+
+                    Image:
+                        id: slider_line
+                        source: 'data/images/mood_slider_x2.png'
+                        size: dp(170), dp(14)
+                        size_hint: (1, None)
+                        allow_stretch: True
+                        keep_ratio: False
+                        color: app.colors.mood_colors[str(mood_assessor_slider.value)]
+
+                AnchorLayout:
+                    height: dp(44)
+                    padding: mood_assessor_slider.value_normalized * (mood_assessor_slider.width-dp(33)) + dp(4), dp(0)
+                    size_hint: (1, None)
+                    anchor_y: 'bottom'
+                    anchor_x: 'left'
+
+                    Image:
+                        source: 'data/images/mood_slider_cursor_x2.png'
+                        size: dp(24), dp(24)
+                        size_hint: (None, None)
+                        allow_stretch: True
+                        keep_ratio: False
 
                 Slider:
                     id: mood_assessor_slider
@@ -58,6 +89,8 @@
                     max: 7
                     value: root.content['default_mood']
                     step: 1
+                    opacity: 0
+
 
 
     AnchorLayout:

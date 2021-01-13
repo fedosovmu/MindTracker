@@ -9,7 +9,6 @@ class MoodAssessmentScreen(Screen):
     def set_bindings(self):
         mood_assessor_slider = self.ids.mood_assessor.ids.mood_assessor_slider
         mood_assessor_slider.fbind('value', self.mood_assessor_slider_on_value_changed)
-        print(self.ids)
 
     def mood_assessor_slider_on_value_changed(self, instance, value):
         print(f'Mood assessment changed {value}')
@@ -18,3 +17,4 @@ class MoodAssessmentScreen(Screen):
         #mood_assessor = self.ids.mood_assessor
         #mood_sphere_image = mood_assessor.ids.mood_sphere_image
         #mood_sphere_image.source = f'data/images/mood_spheres/{value}.png'
+        print(instance.value_normalized)
