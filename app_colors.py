@@ -48,5 +48,15 @@ class AppColors:
         '7': design_colors['MoodColors/7']
     }
 
+    mood_cursor_colors = {
+        '1': design_colors['Black'],
+        '2': design_colors['MoodColors/2'],
+        '3': design_colors['MoodColors/3'],
+        '4': design_colors['MoodColors/4'],
+        '5': design_colors['MoodColors/5'],
+        '6': design_colors['MoodColors/6'],
+        '7': design_colors['MoodColors/7']
+    }
+
     mood_assessor_background_color = design_colors['Purple/SuperDark']
     mood_assessor_secondary_text_color = design_colors['Purple/TextSecondary']

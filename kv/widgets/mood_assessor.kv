@@ -61,8 +61,7 @@
                     anchor_y: 'bottom'
 
                     Image:
-                        id: slider_line
-                        source: 'data/images/mood_slider_x2.png'
+                        source: 'data/images/mood_slider.png'
                         size: dp(170), dp(14)
                         size_hint: (1, None)
                         allow_stretch: True
@@ -77,11 +76,19 @@
                     anchor_x: 'left'
 
                     Image:
-                        source: 'data/images/mood_slider_cursor_x2.png'
+                        id: mood_slider_cursor
+                        source: 'data/images/white_elips.png'
                         size: dp(24), dp(24)
                         size_hint: (None, None)
                         allow_stretch: True
                         keep_ratio: False
+
+                    Image:
+                        source: 'data/images/white_elips.png'
+                        size: dp(14), dp(14)
+                        size_hint: (None, None)
+                        pos: mood_slider_cursor.x + dp(5), mood_slider_cursor.y + dp(5)
+                        color: app.colors.mood_cursor_colors[str(mood_assessor_slider.value)]
 
                 Slider:
                     id: mood_assessor_slider
