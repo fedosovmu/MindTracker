@@ -17,4 +17,3 @@ class MoodAssessmentScreen(Screen):
         #mood_assessor = self.ids.mood_assessor
         #mood_sphere_image = mood_assessor.ids.mood_sphere_image
         #mood_sphere_image.source = f'data/images/mood_spheres/{value}.png'
-        print(instance.value_normalized)
