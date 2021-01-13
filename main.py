@@ -16,7 +16,7 @@ class MindTrackerApp(App):
         self.colors = AppColors
         self.content = AppContent
         Window.clearcolor = AppColors.app_background_color
-        self.screen_manager = Builder.load_file('kv_lang/app.kv')
+        self.screen_manager = Builder.load_file('kv/app.kv')
         self.add_screens()
         return self.screen_manager
 

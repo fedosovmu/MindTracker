@@ -15,3 +15,6 @@ class MoodAssessmentScreen(Screen):
         print(f'Mood assessment changed {value}')
         mood_agree_button = self.ids.mood_agree_button
         mood_agree_button.current_mood = value
+        #mood_assessor = self.ids.mood_assessor
+        #mood_sphere_image = mood_assessor.ids.mood_sphere_image
+        #mood_sphere_image.source = f'data/images/mood_spheres/{value}.png'
