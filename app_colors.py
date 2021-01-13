@@ -52,4 +52,4 @@ class AppColors:
     mood_assessor_secondary_text_color = design_colors['Purple/TextSecondary']
 
     mood_assessor_slider_cursor_colors = mood_colors.copy()
-    mood_assessor_slider_cursor_colors['1'] = design_colors['Black']
+    mood_assessor_slider_cursor_colors['1'] = hex('1D142A')
