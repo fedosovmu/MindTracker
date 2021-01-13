@@ -30,7 +30,7 @@
 
             BoxLayout:
                 orientation: 'horizontal'
-                padding: dp(30), dp(0)
+                padding: dp(29), dp(0)
                 height: dp(40)
                 size_hint: (1, None)
 
@@ -97,6 +97,24 @@
                     value: root.content['default_mood']
                     step: 1
                     opacity: 0
+
+                AnchorLayout:
+                    anchor_y: 'bottom'
+                    padding: dp(11), dp(0)
+
+                    AnchorLayout:
+                        height: dp(40)
+                        size_hint: (1, None)
+                        anchor_y: 'center'
+
+                        AnchorLayout:
+                            id: mood_assessor_slider_scale
+                            height: dp(16)
+                            size_hint: (1, None)
+
+                            canvas.before:
+                                Color:
+                                    rgba: app.colors.mood_assessor_slider_scale_color
 
 
 
