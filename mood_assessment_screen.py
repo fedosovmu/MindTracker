@@ -16,7 +16,6 @@ class MoodAssessmentScreen(Screen):
         mood_assessor_slider_scale.bind(size=self.mood_assessor_slider_scale_changed_size_callback)
 
     def mood_assessor_slider_on_value_changed(self, instance, value):
-        print(f'Mood assessment changed {value}')
         self.redraw_agree_button(mood=value)
         self.redraw_mood_assessor_slider_scale(mood=value)
 

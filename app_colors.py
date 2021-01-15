@@ -55,3 +55,4 @@ class AppColors:
     mood_assessor_slider_cursor_border_color = design_colors['White']
     mood_assessor_slider_cursor_colors = mood_colors.copy()
     mood_assessor_slider_cursor_colors[1] = hex('1D142A')
+    mood_assessor_slider_cursor_colors[4] = hex('FFA3E0')

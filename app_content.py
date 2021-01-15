@@ -11,7 +11,7 @@ class AppContent:
 
     mood_assessment_screen = {
         'header_text': 'Как ваше настроение?',
-        'mood_agree_button_text': 'Принимаю',
+        'mood_agree_button_text': 'Оценить',
         'skip_button_text': 'Пропустить',
         'mood_assessor': {
             'secondary_label_mood_text': 'Настроение',
