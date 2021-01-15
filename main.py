@@ -28,5 +28,6 @@ class MindTrackerApp(App):
         self.screen_manager.transition.direction = direction
         self.screen_manager.current = screen_name
 
+
 if __name__ == '__main__':
     MindTrackerApp().run()
