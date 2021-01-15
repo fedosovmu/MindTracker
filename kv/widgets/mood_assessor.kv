@@ -24,7 +24,7 @@
                     radius: [dp(24),]
 
             HeaderText:
-                text: root.content['mood_names'][str(root.mood)]
+                text: root.content['mood_names'][root.mood]
                 valign: 'bottom'
                 halign: 'center'
 
@@ -66,7 +66,7 @@
                         size_hint: (1, None)
                         allow_stretch: True
                         keep_ratio: False
-                        color: app.colors.mood_colors[str(mood_assessor_slider.value)]
+                        color: app.colors.mood_colors[mood_assessor_slider.value]
 
                 AnchorLayout:
                     height: dp(44)
@@ -75,20 +75,31 @@
                     anchor_y: 'bottom'
                     anchor_x: 'left'
 
-                    Image:
-                        id: mood_slider_cursor
-                        source: 'data/images/white_elips.png'
+                    Widget:
+                        id: mood_slider_cursor_border
                         size: dp(24), dp(24)
                         size_hint: (None, None)
-                        allow_stretch: True
-                        keep_ratio: False
 
-                    Image:
-                        source: 'data/images/white_elips.png'
+                        canvas.before:
+                            Color:
+                                rgb: app.colors.mood_assessor_slider_cursor_border_color
+                            Ellipse:
+                                size: self.size
+                                pos: self.pos
+
+                    Widget:
+                        id: mood_slider_cursor_center
                         size: dp(14), dp(14)
                         size_hint: (None, None)
-                        pos: mood_slider_cursor.x + dp(5), mood_slider_cursor.y + dp(5)
-                        color: app.colors.mood_assessor_slider_cursor_colors[str(mood_assessor_slider.value)]
+                        pos: mood_slider_cursor_border.x + dp(5), mood_slider_cursor_border.y + dp(5)
+                        color: app.colors.mood_assessor_slider_cursor_colors[mood_assessor_slider.value]
+                        canvas.before:
+                            Color:
+                                rgb: app.colors.mood_assessor_slider_cursor_colors[app.content.mood_assessment_screen['mood_assessor']['default_mood']] if self.color is None else self.color
+                            Ellipse:
+                                size: self.size
+                                pos: self.pos
+
 
                 Slider:
                     id: mood_assessor_slider
@@ -107,14 +118,15 @@
                         size_hint: (1, None)
                         anchor_y: 'center'
 
-                        AnchorLayout:
-                            id: mood_assessor_slider_scale
-                            height: dp(16)
-                            size_hint: (1, None)
+                        Button
+                        #AnchorLayout:
+                        #    id: mood_assessor_slider_scale
+                        #    height: dp(16)
+                        #    size_hint: (1, None)
 
-                            canvas.before:
-                                Color:
-                                    rgba: app.colors.mood_assessor_slider_scale_color
+                            #canvas.before:
+                            #    Color:
+                            #        rgba: app.colors.mood_assessor_slider_scale_color
 
 
 

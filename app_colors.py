@@ -39,18 +39,19 @@ class AppColors:
     main_text_color = design_colors['SilverWhite']
 
     mood_colors = {
-        '1': design_colors['MoodColors/1'],
-        '2': design_colors['MoodColors/2'],
-        '3': design_colors['MoodColors/3'],
-        '4': design_colors['MoodColors/4'],
-        '5': design_colors['MoodColors/5'],
-        '6': design_colors['MoodColors/6'],
-        '7': design_colors['MoodColors/7']
+        1: design_colors['MoodColors/1'],
+        2: design_colors['MoodColors/2'],
+        3: design_colors['MoodColors/3'],
+        4: design_colors['MoodColors/4'],
+        5: design_colors['MoodColors/5'],
+        6: design_colors['MoodColors/6'],
+        7: design_colors['MoodColors/7']
     }
 
     mood_assessor_background_color = design_colors['Purple/SuperDark']
     mood_assessor_secondary_text_color = design_colors['Purple/TextSecondary']
     mood_assessor_slider_scale_color = hex('322A42')
 
+    mood_assessor_slider_cursor_border_color = design_colors['White']
     mood_assessor_slider_cursor_colors = mood_colors.copy()
-    mood_assessor_slider_cursor_colors['1'] = hex('1D142A')
+    mood_assessor_slider_cursor_colors[1] = hex('1D142A')
