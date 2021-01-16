@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.core.window import Window
+from kivy.base import EventLoop
 from app_colors import AppColors
 from app_content import AppContent
 from mood_assessment_screen import MoodAssessmentScreen
@@ -12,13 +13,25 @@ class MindTrackerApp(App):
         self.colors = AppColors
         self.content = AppContent
         Window.clearcolor = AppColors.app_background_color
-        self.screen_manager = Builder.load_file('kv/app.kv')
-        self.add_screens()
+        self.set_bindings()
+        self.screen_manager = self.create_screen_manager()
         return self.screen_manager
 
-    def add_screens(self):
+    def set_bindings(self):
+        Window.bind(on_keyboard=self.on_key)
+
+    def on_key(self, window, key, *args):
+        if key == 27:  # (Escape key or Back button)
+            EventLoop.exit()
+
+    def on_mood_assessment_screen_skip_button_press(self):
+        EventLoop.close()
+
+    def create_screen_manager(self):
+        screen_manager = Builder.load_file('kv/app.kv')
         mood_assessment_screen = MoodAssessmentScreen(name='mood_assessment')
-        self.screen_manager.add_widget(mood_assessment_screen)
+        screen_manager.add_widget(mood_assessment_screen)
+        return screen_manager
 
     def switch_screen(self, screen_name, direction='left'):
         self.screen_manager.transition.direction = direction
