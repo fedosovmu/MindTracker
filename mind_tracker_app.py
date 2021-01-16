@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.core.window import Window
-from kivy.base import EventLoop
+from kivy.base import EventLoop, stopTouchApp
 from app_colors import AppColors
 from app_content import AppContent
 from mood_assessment_screen import MoodAssessmentScreen
@@ -22,10 +22,14 @@ class MindTrackerApp(App):
 
     def on_key(self, window, key, *args):
         if key == 27:  # (Escape key or Back button)
-            EventLoop.exit()
+            self.stop()
+
+    def on_mood_assessment_screen_mood_assess_button_press(self):
+        self.root_window.close()
+
 
     def on_mood_assessment_screen_skip_button_press(self):
-        EventLoop.close()
+        stopTouchApp()
 
     def create_screen_manager(self):
         screen_manager = Builder.load_file('kv/app.kv')

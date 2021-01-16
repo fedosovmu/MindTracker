@@ -25,7 +25,7 @@
             MainButton:
                 id: mood_agree_button
                 text: root.content['mood_agree_button_text']
-                on_press: print(f'Assess mood {mood_assessor.mood}')
+                on_press: app.on_mood_assessment_screen_mood_assess_button_press() #print(f'Assess mood {mood_assessor.mood}')
                 current_mood: 4
 
                 canvas.before:
