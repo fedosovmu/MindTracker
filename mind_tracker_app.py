@@ -14,7 +14,7 @@ class MindTrackerApp(App):
         self.content = AppContent
         Window.clearcolor = AppColors.app_background_color
         self.set_bindings()
-        self.screen_manager = self.create_screen_manager()
+        self.create_screen_manager()
         return self.screen_manager
 
     def set_bindings(self):
@@ -24,18 +24,11 @@ class MindTrackerApp(App):
         if key == 27:  # (Escape key or Back button)
             self.stop()
 
-    def on_mood_assessment_screen_mood_assess_button_press(self):
-        self.root_window.close()
-
-
-    def on_mood_assessment_screen_skip_button_press(self):
-        stopTouchApp()
-
     def create_screen_manager(self):
         screen_manager = Builder.load_file('kv/app.kv')
         mood_assessment_screen = MoodAssessmentScreen(name='mood_assessment')
         screen_manager.add_widget(mood_assessment_screen)
-        return screen_manager
+        self.screen_manager = screen_manager
 
     def switch_screen(self, screen_name, direction='left'):
         self.screen_manager.transition.direction = direction
@@ -43,3 +36,6 @@ class MindTrackerApp(App):
 
     def on_pause(self):
         return True
+
+    def on_stop(self):
+        pass
