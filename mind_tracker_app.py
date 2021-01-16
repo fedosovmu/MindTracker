@@ -23,3 +23,6 @@ class MindTrackerApp(App):
     def switch_screen(self, screen_name, direction='left'):
         self.screen_manager.transition.direction = direction
         self.screen_manager.current = screen_name
+
+    def on_pause(self):
+        return True
